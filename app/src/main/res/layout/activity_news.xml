@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/color_background">
+
+        <TextView
+            android:id="@+id/app_bar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="World News"
+            android:layout_marginLeft="32dp"
+            android:textColor="@color/white"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            style="@style/TextAppearance.AppCompat.Medium">
+        </TextView>
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/news_headlines"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="16dp"
+        android:text="Top Headlines"
+        style="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/color_background"
+        android:textStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollIndicators="none" />
+
+</LinearLayout>

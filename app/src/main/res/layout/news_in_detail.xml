@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/app_bar">
+    </include>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedscrollview_detailed_news"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:layout_below="@+id/relativelayout_toobar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/img_detailed_news"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:scaleType="centerCrop"
+                android:src="@color/shadow">
+            </ImageView>
+
+            <TextView
+                android:id="@+id/tv_detailed_news_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="News Detail Title"
+                style="@style/TextAppearance.AppCompat.Large"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+            </TextView>
+            <TextView
+                android:id="@+id/tv_detailed_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="12 Nov 2020"
+                style="@style/TextAppearance.AppCompat.Medium"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:textColor="@color/black">
+            </TextView>
+            <TextView
+                android:id="@+id/tv_detailed_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.AppCompat.Medium"
+                android:padding="16dp"
+                android:text="@string/news_in_detail"/>
+
+            <TextView
+                android:id="@+id/tv_author"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mr. John"
+                android:textSize="18sp"
+                android:textStyle="italic"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/tv_source"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CNN"
+                android:textSize="18sp"
+                android:textStyle="italic"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>
