@@ -13,11 +13,6 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.android.news.R;
 import com.example.android.news.landing.NewsActivity;
-import com.example.android.news.landing.NewsObject;
-
-import org.w3c.dom.Text;
-
-import butterknife.OnClick;
 
 
 public class NewsDetailActivity extends AppCompatActivity {
@@ -43,10 +38,17 @@ public class NewsDetailActivity extends AppCompatActivity {
         tv_detail_news_source = (TextView) findViewById(R.id.tv_source);
 
 
-        //getting object data from another activity so serializable is used
+        /**
+         *
+         * getting object data from another activity so serializable is used
+         *
+         * **/
 
-        NewsObject newsObject = (NewsObject) getIntent().getSerializableExtra("newsobject");
+        //NewsObject newsObject = (NewsObject) getIntent().getSerializableExtra("newsobject");
 
+        /**
+         *
+         * Getting **/
         String title = "";
         String img_url = "";
         String author = "";
@@ -62,17 +64,33 @@ public class NewsDetailActivity extends AppCompatActivity {
             source = extras.getString("source");
         }
 
+        /**
+         *
+         * Setting the data which will be getting form the intents.
+         *
+         **/
+
         title_detailed_news.setText(title);
+        tv_detail_news_author.setText(author);
+        detailed_news_date.setText(date);
+        tv_detail_news_source.setText(source);
+
+        /**
+         *
+         * This will return only one picture in the detail news activity as the dummy data is used.
+         *
+         * **/
         Glide.with(getApplicationContext())
                 .load(img_url)
                 .apply(RequestOptions.centerCropTransform())
                 .apply(RequestOptions.placeholderOf(R.drawable.nature))
                 .into(img_detailed_news);
 
-        tv_detail_news_author.setText(author);
-        detailed_news_date.setText(date);
-        tv_detail_news_source.setText(source);
-
+        /**
+         *
+         * For the back button
+         *
+         * **/
         image_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

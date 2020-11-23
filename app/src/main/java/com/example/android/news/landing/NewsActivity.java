@@ -35,6 +35,10 @@ public class NewsActivity extends AppCompatActivity implements NewsViewHolder.Ne
     private void setupViews() {
          recyclerView = (RecyclerView) findViewById(R.id.recyclerview);
          mlist.clear();
+
+         /**
+          * Setting the data for the news object
+          * **/
          mlist.add(new NewsObject("Sunset", R.drawable.nature,  "Mr. John","20 Nov 2020",
                  "CNN", "There are many variations of passages of Lorem Ipsum available," +
                  " but the majority have suffered alteration in some form, by injected humour, or" +
@@ -81,10 +85,16 @@ public class NewsActivity extends AppCompatActivity implements NewsViewHolder.Ne
     }
 
 
+
     @Override
     public void onItemClick(int position) {
         Log.d("clicked", "OnItemClick: " + position);
 
+        /**
+         *
+         * Setting the intents for the detail news activity with the related fields
+         *
+         *  **/
         Intent detailIntent = new Intent(getApplication(), NewsDetailActivity.class);
         detailIntent.putExtra("title", mlist.get(position).getTitle());
         detailIntent.putExtra("image", mlist.get(position).getImage());

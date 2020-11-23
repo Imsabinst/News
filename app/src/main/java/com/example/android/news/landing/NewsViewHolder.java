@@ -18,6 +18,13 @@ public class NewsViewHolder extends RecyclerView.ViewHolder {
     TextView tv_source;
     NewsItemClick newsItemClick;
 
+    /**
+     *
+     * This interface will detect the click and this method is used in the NewsActivity
+     * which will send the position of the clicked item.
+     *
+     * **/
+
     public interface NewsItemClick {
         void onItemClick(int position);
     }
@@ -26,7 +33,11 @@ public class NewsViewHolder extends RecyclerView.ViewHolder {
         super(itemView);
         this.newsItemClick = newsItemClick;
 
-        //Click listener for each news items
+        /**
+         *
+         * Click listener for each news items
+         *
+         * **/
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
